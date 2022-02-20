@@ -112,35 +112,23 @@ def save_qualifying_loans(qualifying_loans):
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
-
-    confirm = questionary.confirm("Would you like to save the list of qualifying loans?").ask()
-    message = "Try again"
-    
-    if confirm == 'y':
-        output_file_path = questionary.text("Enter the output file path (.csv): ").ask()
-        output_file_path = Path()
-        output_file = open(output_file_path, "w")
-        if not output_file_path.exists():
-            sys.exit(f"Cannot find this path: {output_file_path}")
-        save_csv(output_file)
-    print(message)
-    print(f"The list of qualifying loans has been saved in {output_file_path}")
-
-
-def save_qualifying_loans(qualifying_loans):
-    """Accepts the list of qualifying loans and asks where to save it.
-
-    Args:
-        qualifying_loans (list of lists): The qualifying bank loans.
-    """
+    # Questionary confirm tool to check if user wants to save list
     if questionary.confirm("Would you like to save the list of qualifying loans?").ask():
+       
+        # If user doesn't have any loans, exit with exit message
         if not(len(qualifying_loans) > 0):
             sys.exit("You have no loans to save, nice try")
+       
+        # If user has more than one loan and wants to save list, ask for output file path
         output_file_path = questionary.text("Enter the output file path (.csv): ").ask()
+        
+        # If sure, write list into output file path variable saved above
         if questionary.confirm("Are you sure?").ask():
             with open(output_file_path, 'w', encoding='UTF8', newline='') as f:
                 writer = csv.writer(f)
                 writer.writerows(qualifying_loans)
+            
+            # Print loans have been saved in specified file path
             print(f"The list of qualifying loans has been saved in {output_file_path}")
 
 

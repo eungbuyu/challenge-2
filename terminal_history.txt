@@ -1,0 +1,27 @@
+    1  pip install fire
+    2  import fire
+    3  pip install fire
+    4  import fire
+    5  .. code
+    6  . code
+    7  cd onedrive/desktop/FinTech-Workspace/
+    8  ls
+    9  cd Python_Project/github_upload/Challenge\ 2/
+   10  ls
+   11  cd challenge-2
+   12  ls
+   13  git commit
+   14  git commit app.py qualifier/utils/fileio.py
+   15  git status
+   16  git push
+   17  python app.py
+   18  python app.py
+   19  git commit
+   20  git add README.md example.png example_qualifying_loans.csv
+   21  git status
+   22  giit commit
+   23  git commit "Created a README.md file, with supporting example.png file and example_qualifying_loans.csv file"
+   24  git status
+   25  git commit -m "Created a README.md file with supporting photo and csv files"
+   26  git push
+   27  history 50 > terminal_history.txt
